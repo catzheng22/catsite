@@ -22,7 +22,7 @@ function loadUnityInstance({id, title, buildPath}: GameProps) {
   const script = document.createElement('script')
   script.src = `${buildPath}/${title}.loader.js`
   script.onload = () => {
-    // @ts-ignore
+    // @ts-expect-error this line will run error-free in the DOM
     createUnityInstance(canvas, config)
   }
   document.body.appendChild(script)
